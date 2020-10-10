@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="jumbotron" style="background-color: white;">
+    <form action="" method="post">
+        {%csrf_token%}
+        {{form|crispy}}
+        <div class="text-right"><a href="{% url 'password_reset'%}">Forgot password?</a></div>
+        <br>
+        <button type="submit" class="btn btn-primary btn-block btn-sm">Login</button>
+    </form>
+    <br>
+    <p>Don't have an account? <a href="{% url 'register'%}">Sign up</a></p>
+</div>
+{% endblock %}
